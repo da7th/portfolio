@@ -69,4 +69,23 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   reveals.forEach((el) => observer.observe(el));
+
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    const toggleVisibility = () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
