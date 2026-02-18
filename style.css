@@ -5,156 +5,60 @@ body {
 .dark body {
   background: #000000 !important;
 }
-.grainy-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(128, 128, 128, 0.2) 0%,
-    rgba(128, 128, 128, 0) 70%
-  );
-  pointer-events: none;
-}
-.dark .grainy-center {
-  display: none;
-}
 
-body {
-  font-family: "Inter", sans-serif;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cdefs%3E%3Cfilter id="a" x="-50%25" y="-50%25" width="200%25" height="200%25"%3E%3CfeTurbulence baseFrequency="0.05" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/%3E%3CfeColorMatrix type="saturate" values="0"/%3E%3C/filter%3E%3C/defs%3E%3Crect fill="%23f3f3f3" height="100%25" width="100%25"/%3E%3Crect height="100%25" width="100%25" filter="url(%23a)" opacity=".05"/%3E%3C/svg%3E');
+.skill-card,
+.project-card,
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafafa !important;
 }
-.dark body {
-  background: #000000 !important;
-}
-.grainy-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(128, 128, 128, 0.2) 0%,
-    rgba(128, 128, 128, 0) 70%
-  );
-  pointer-events: none;
-}
-.dark .grainy-center {
-  display: none;
-}
-.skill-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.skill-card:hover {
+.skill-card:hover,
+.project-card:hover,
+.contact-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-.dark .skill-card:hover {
+.dark .skill-card:hover,
+.dark .project-card:hover,
+.dark .contact-card:hover {
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0);
 }
-.dark .skill-card {
+.dark .skill-card,
+.dark .project-card,
+.dark .contact-card {
   background-color: #121212 !important;
 }
-.dark .about-section {
+
+.about-section,
+.cta-section {
+  background-color: #fafafa !important;
+}
+.dark .about-section,
+.dark .cta-section {
   background-color: #121212 !important;
 }
-.skill-card {
-  background-color: #fafafa !important;
-}
-.about-section {
-  background-color: #fafafa !important;
-}
 
-body {
-  font-family: "Inter", sans-serif;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cdefs%3E%3Cfilter id="a" x="-50%25" y="-50%25" width="200%25" height="200%25"%3E%3CfeTurbulence baseFrequency="0.05" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/%3E%3CfeColorMatrix type="saturate" values="0"/%3E%3C/filter%3E%3C/defs%3E%3Crect fill="%23f3f3f3" height="100%25" width="100%25"/%3E%3Crect height="100%25" width="100%25" filter="url(%23a)" opacity=".05"/%3E%3C/svg%3E');
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
 }
-.dark body {
-  background: #000000 !important;
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.grainy-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(128, 128, 128, 0.2) 0%,
-    rgba(128, 128, 128, 0) 70%
-  );
-  pointer-events: none;
+.reveal.fade-left {
+  transform: translateX(-20px);
 }
-.dark .grainy-center {
-  display: none;
+.reveal.fade-right {
+  transform: translateX(20px);
 }
-.project-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
 }
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.dark .project-card:hover {
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0);
-}
-.dark .project-card {
-  background-color: #121212 !important;
-}
-.project-card {
-  background-color: #fafafa !important;
-}
-
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cdefs%3E%3Cfilter id="a" x="-50%25" y="-50%25" width="200%25" height="200%25"%3E%3CfeTurbulence baseFrequency="0.05" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/%3E%3CfeColorMatrix type="saturate" values="0"/%3E%3C/filter%3E%3C/defs%3E%3Crect fill="%23f3f3f3" height="100%25" width="100%25"/%3E%3Crect height="100%25" width="100%25" filter="url(%23a)" opacity=".05"/%3E%3C/svg%3E');
-        }
-        .dark body {
-            background: #000000 !important;
-        }
-        .grainy-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            background: radial-gradient(ellipse at center, rgba(128,128,128,0.2) 0%, rgba(128,128,128,0) 70%);
-            pointer-events: none;
-        }
-        .dark .grainy-center {
-            display: none;
-        }
-        .contact-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .dark .contact-card:hover {
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.0);
-        }
-        .dark .contact-card {
-            background-color: #121212 !important;
-        }
-        .dark .cta-section {
-            background-color: #121212 !important;
-        }
-        .contact-card {
-            background-color: #FAFAFA !important;
-        }
-        .cta-section {
-            background-color: #FAFAFA !important;
-        }
