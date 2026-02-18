@@ -1,14 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "**/*.html", "use": "@vercel/static" },
-    { "src": "curriculum.pdf", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/projects$", "dest": "/projects.html" },
-    { "src": "^/info$", "dest": "/info.html" },
-    { "src": "^/contact$", "dest": "/contact.html" },
-    { "src": "^/curriculum$", "dest": "/curriculum.pdf" }
-  ]
+"version": 2,
+"builds": [
+{ "src": "/*.html", "use": "@vercel/static" },
+{ "src": "/*.{css,js,svg,png,jpg,jpeg,gif,webp,ico,ttf,woff,woff2,eot,otf,json}", "use": "@vercel/static" },
+{ "src": "curriculum.pdf", "use": "@vercel/static" }
+],
+"routes": [
+{ "src": "^/$", "dest": "/index.html" },
+{ "src": "^/projects$", "dest": "/projects.html" },
+{ "src": "^/info$", "dest": "/info.html" },
+{ "src": "^/contact$", "dest": "/contact.html" },
+{ "src": "^/curriculum$", "dest": "/curriculum.pdf" }
+]
 }
